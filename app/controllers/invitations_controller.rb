@@ -1,6 +1,6 @@
 class InvitationsController < ApplicationController
-  before_action :find_event, only: [:edit, :update]
-  before_action :authenticate_user!, only: [:edit, :update]
+  before_action :find_event, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   def edit 
     # "/invitations/:id/edit"
 
@@ -15,7 +15,7 @@ class InvitationsController < ApplicationController
   def destroy
     #has event because of edit
     #adds current user to event attendes
-    current_user.destroy
+    @event.attendees.delete(current_user)
     redirect_to controller: :events_controller, action: :index
   end
 
