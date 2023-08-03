@@ -3,5 +3,5 @@ class Event < ApplicationRecord
   foreign_key: "creator_id" 
   
   has_many :invitations
-  has_many :attendees, through: :invitations, foreign_key: "attendee_id"
+  has_many :attendees, through: :invitations, source: :attende
 end
