@@ -1,3 +1,8 @@
 <h1>Event: <%= @event.name %></h1>
 <p>Location: <%= @event.location%> </p>
 <h3>Date: <%= @event.date %></h3>
+<h1>Attendees</h1>
+<% @event.attendees.each do |attendee|%>
+  <h2>Email: <%= attendee.email %></h3>
+  <h3>User Id: <%= attendee.id%></h3>
+<% end %>

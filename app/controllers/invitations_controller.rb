@@ -10,7 +10,7 @@ class InvitationsController < ApplicationController
     #has event because of edit
     #adds current user to event attendes
     @event.attendees << current_user
-    render controller: "events", action: :index
+    redirect_to controller: "events", action: :index
   end
   def destroy
     #has event because of edit
