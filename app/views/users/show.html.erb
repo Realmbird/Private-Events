@@ -4,8 +4,14 @@
   <h3><%= event.location%></h3>
   <h3><%= event.date %></h3>
 <%end%>
-<h2>Attended Events</h2>
-<% @user.attended_events.each do |event|%>
+<h2>Future Attended Events</h2>
+<% @user.attended_events.future.each do |event|%>
+  <h2><%= event.name%></h3>
+  <h3><%= event.location%></h3>
+  <h3><%= event.date %></h3>
+<% end %>
+<h2>Past Attended Events</h2>
+<% @user.attended_events.past.each do |event|%>
   <h2><%= event.name%></h3>
   <h3><%= event.location%></h3>
   <h3><%= event.date %></h3>
