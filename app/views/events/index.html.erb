@@ -1,11 +1,10 @@
+ <%= render "shared/navbar" %>
 <h1>Index Events</h1>
 <% @events.each do |event|%>
   <h2><%= event.name %></h3>
   <h3><%= event.location%></h3>
   <h3><%= event.date %></h3>
+  <h3><%= link_to "Edit", edit_event_path(event)%></h3>
+  <h3><%= link_to "RSPV", edit_invitation_path(event)%></h3>
 <% end %>
-<% if user_signed_in? %>
-  <%= button_to "logout", destroy_user_session_path, method: :delete  %>
-<% else %>
-  <%= button_to "login", new_user_session_path, method: :new  %>
-<% end %>
+

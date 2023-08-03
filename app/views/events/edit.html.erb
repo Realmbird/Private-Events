@@ -8,3 +8,6 @@
   <%= event.date_field :date %>
   <%= event.submit "Submit" %>
 <% end %>
+<% if user_signed_in? %>
+ <%= button_to "Delete",  event_path(params[:id]), method: :delete%>
+<% end%>
